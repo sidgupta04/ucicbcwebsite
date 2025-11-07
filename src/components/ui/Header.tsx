@@ -3,10 +3,13 @@ import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Menu, X } from "lucide-react";
 
+
 const navigation = [
-  { name: "Home", href: "#" },
-  { name: "Events", href: "#events" },
-  { name: "Meet the Team", href: "#team" },
+  { name: "Home", href: "/" },
+  { name: "Events", href: "/events" },
+  { name: "Meet the Team", href: "/team" },
+  { name: "Hackathon", href: "/hackathon"},
+  { name: "About", href: "/about"}
 ];
 
 export default function Header() {
