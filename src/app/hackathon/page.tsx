@@ -81,16 +81,43 @@ function Card({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
     />
   );
 }
-function CardHeader({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
-  return <div className={cx("p-6 border-b border-[#da7756]/20 bg-gradient-to-r from-[#da7756]/5 to-transparent", className)} {...props} />;
+function CardHeader({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) {
+  return (
+    <div
+      className={cx(
+        "p-6 border-b border-[#da7756]/20 bg-gradient-to-r from-[#da7756]/5 to-transparent",
+        className
+      )}
+      {...props}
+    />
+  );
 }
-function CardTitle({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
-  return <h3 className={cx("text-xl font-bold text-gray-900", className)} {...props} />;
+function CardTitle({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLHeadingElement>) {
+  return (
+    <h3
+      className={cx("text-xl font-bold text-gray-900", className)}
+      {...props}
+    />
+  );
 }
-function CardDescription({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) {
-  return <p className={cx("text-sm text-gray-600 mt-1", className)} {...props} />;
+function CardDescription({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLParagraphElement>) {
+  return (
+    <p className={cx("text-sm text-gray-600 mt-1", className)} {...props} />
+  );
 }
-function CardContent({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+function CardContent({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) {
   return <div className={cx("p-6 pt-4", className)} {...props} />;
 }
 
@@ -113,11 +140,24 @@ function Separator({ className }: { className?: string }) {
 }
 
 // Accordion using <details/summary>
-const Accordion = ({ children, className }: { children: React.ReactNode; className?: string }) => (
-  <div className={cx("space-y-3", className)}>{children}</div>
-);
-const AccordionItem = ({ children, value }: { children: React.ReactNode; value: string }) => (
-  <details className="rounded-2xl border-2 border-gray-200 p-4 bg-white hover:border-[#da7756]/30 transition-all" data-value={value}>
+const Accordion = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => <div className={cx("space-y-3", className)}>{children}</div>;
+const AccordionItem = ({
+  children,
+  value,
+}: {
+  children: React.ReactNode;
+  value: string;
+}) => (
+  <details
+    className="rounded-2xl border-2 border-gray-200 p-4 bg-white hover:border-[#da7756]/30 transition-all"
+    data-value={value}
+  >
     {children}
   </details>
 );
@@ -140,7 +180,7 @@ const HACKATHON = {
   locationLabel: "UC Irvine",
   theme: "Claude-powered builds",
   expectedSize: "~120 students",
-  registerHref: "/signup",
+  registerHref: "https://luma.com/uh9arhfk",
   instagram: "https://instagram.com/claudebuildersuci",
   linkedin: "https://www.linkedin.com/company/claude-builder-club-uci/",
   discord: "https://discord.gg/",
@@ -157,7 +197,10 @@ export function formatCountdown(ms: number): string {
 }
 
 function Countdown() {
-  const target = React.useMemo(() => new Date("2025-11-22T09:00:00-08:00").getTime(), []);
+  const target = React.useMemo(
+    () => new Date("2025-11-22T09:00:00-08:00").getTime(),
+    []
+  );
   const [timeLeft, setTimeLeft] = React.useState<string>("");
 
   React.useEffect(() => {
@@ -196,7 +239,7 @@ export default function HackathonPage() {
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-zinc-50 to-orange-50">
       <Header />
-      
+
       <main className="relative mx-auto max-w-6xl px-4 pb-20 pt-10 sm:px-6 lg:px-8">
         {/* Hero */}
         <motion.section
@@ -219,7 +262,9 @@ export default function HackathonPage() {
               {HACKATHON.title}
             </motion.h1>
             <p className="max-w-2xl text-lg text-gray-600">
-              Build with Claude alongside fellow UCI makers. Meet mentors, ship something scrappy, and have fun. Sponsors, judges, and full schedule are coming soon.
+              Build with Claude alongside fellow UCI makers. Meet mentors, ship
+              something scrappy, and have fun. Sponsors, judges, and full
+              schedule are coming soon.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 text-sm">
@@ -265,10 +310,26 @@ export default function HackathonPage() {
                 <CardDescription>Fast, fun, beginner-friendly</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3 text-sm">
-                <InfoRow icon={<CalendarDays className="h-4 w-4 text-[#da7756]" />} label="Date" value={HACKATHON.dateLabel} />
-                <InfoRow icon={<Clock className="h-4 w-4 text-[#da7756]" />} label="Duration" value={HACKATHON.timeLabel} />
-                <InfoRow icon={<MapPin className="h-4 w-4 text-[#da7756]" />} label="Location" value={HACKATHON.locationLabel} />
-                <InfoRow icon={<Users className="h-4 w-4 text-[#da7756]" />} label="Attendees" value={HACKATHON.expectedSize} />
+                <InfoRow
+                  icon={<CalendarDays className="h-4 w-4 text-[#da7756]" />}
+                  label="Date"
+                  value={HACKATHON.dateLabel}
+                />
+                <InfoRow
+                  icon={<Clock className="h-4 w-4 text-[#da7756]" />}
+                  label="Duration"
+                  value={HACKATHON.timeLabel}
+                />
+                <InfoRow
+                  icon={<MapPin className="h-4 w-4 text-[#da7756]" />}
+                  label="Location"
+                  value={HACKATHON.locationLabel}
+                />
+                <InfoRow
+                  icon={<Users className="h-4 w-4 text-[#da7756]" />}
+                  label="Attendees"
+                  value={HACKATHON.expectedSize}
+                />
               </CardContent>
             </Card>
           </motion.div>
@@ -292,7 +353,9 @@ export default function HackathonPage() {
               <CardContent className="space-y-3 text-sm">
                 <Bullet>Flyers going up this week.</Bullet>
                 <Bullet>Hackathon announcement on Instagram next week.</Bullet>
-                <Bullet>Full schedule, judges, and prizes revealed soon.</Bullet>
+                <Bullet>
+                  Full schedule, judges, and prizes revealed soon.
+                </Bullet>
               </CardContent>
             </Card>
           </motion.div>
@@ -325,7 +388,9 @@ export default function HackathonPage() {
         {/* Schedule placeholder */}
         <section className="mb-12">
           <header className="mb-6">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900">Schedule (TBD)</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900">
+              Schedule (TBD)
+            </h2>
             <p className="text-gray-600 mt-2">Full timeline coming soon</p>
           </header>
           <div className="grid gap-6 md:grid-cols-2">
@@ -338,7 +403,9 @@ export default function HackathonPage() {
               <Card>
                 <CardHeader>
                   <CardTitle>Morning</CardTitle>
-                  <CardDescription>Check-in, kickoff, team formation</CardDescription>
+                  <CardDescription>
+                    Check-in, kickoff, team formation
+                  </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-2 text-sm">
                   <SkeletonLine />
@@ -396,7 +463,9 @@ export default function HackathonPage() {
             <Card className="h-full">
               <CardHeader>
                 <CardTitle>Sponsors (TBD)</CardTitle>
-                <CardDescription>Interested in sponsoring? Email us.</CardDescription>
+                <CardDescription>
+                  Interested in sponsoring? Email us.
+                </CardDescription>
               </CardHeader>
               <CardContent className="grid grid-cols-2 gap-3 sm:grid-cols-4">
                 <LogoSkeleton />
@@ -415,30 +484,42 @@ export default function HackathonPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.0 }}
         >
-          <h2 className="mb-6 text-3xl font-bold tracking-tight text-gray-900">FAQ</h2>
+          <h2 className="mb-6 text-3xl font-bold tracking-tight text-gray-900">
+            FAQ
+          </h2>
           <Accordion>
             <AccordionItem value="who">
               <AccordionTrigger>Who can participate?</AccordionTrigger>
               <AccordionContent>
-                All UCI students are welcome — beginners encouraged. We'll share team-forming time at kickoff.
+                All UCI students are welcome — beginners encouraged. We'll share
+                team-forming time at kickoff.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="theme">
               <AccordionTrigger>What are we building?</AccordionTrigger>
               <AccordionContent>
-                Anything that showcases Claude creatively: tools, agents, apps, plugins, experiments. Solo or team.
+                Anything that showcases Claude creatively: tools, agents, apps,
+                plugins, experiments. Solo or team.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="tools">
               <AccordionTrigger>What tools are allowed?</AccordionTrigger>
               <AccordionContent>
-                Bring your stack. We'll share any credits or starter templates we can provide as we confirm sponsors.
+                Bring your stack. We'll share any credits or starter templates
+                we can provide as we confirm sponsors.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="registration">
               <AccordionTrigger>How do I register?</AccordionTrigger>
               <AccordionContent>
-                Tap <Link href={HACKATHON.registerHref} className="underline underline-offset-4 text-[#da7756] font-semibold hover:text-[#da7756]/80">Register interest</Link> and we'll email you as soon as formal sign-ups open.
+                Tap{" "}
+                <Link
+                  href={HACKATHON.registerHref}
+                  className="underline underline-offset-4 text-[#da7756] font-semibold hover:text-[#da7756]/80"
+                >
+                  Register interest
+                </Link>{" "}
+                and we'll email you as soon as formal sign-ups open.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -469,7 +550,15 @@ function Pill({ children }: { children: React.ReactNode }) {
   );
 }
 
-function InfoRow({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) {
+function InfoRow({
+  icon,
+  label,
+  value,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+}) {
   return (
     <div className="flex items-center justify-between gap-3">
       <div className="flex items-center gap-2 text-gray-600">
@@ -495,11 +584,15 @@ function SkeletonLine() {
 }
 
 function AvatarSkeleton() {
-  return <div className="aspect-square w-full rounded-xl bg-gray-200 animate-pulse" />;
+  return (
+    <div className="aspect-square w-full rounded-xl bg-gray-200 animate-pulse" />
+  );
 }
 
 function LogoSkeleton() {
-  return <div className="aspect-video w-full rounded-xl bg-gray-200 animate-pulse" />;
+  return (
+    <div className="aspect-video w-full rounded-xl bg-gray-200 animate-pulse" />
+  );
 }
 
 function SocialLink({ href, label }: { href: string; label: string }) {
