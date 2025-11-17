@@ -1,6 +1,7 @@
 import WhyJoinCards from "../components/ui/WhyJoinCards";
 import Header from "../components/ui/Header";
 import JoinSection from "../components/ui/joinsection";
+import Footer from "../components/ui/footer";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <WhyJoinCards />
       <JoinSection />
       <main className="flex items-center justify-center"></main>
+      <Footer />
     </div>
   );
 }

@@ -22,12 +22,12 @@ import {
   ExternalLink,
   ArrowRight,
 } from "lucide-react";
+import Footer from "../../components/ui/footer";
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-zinc-50 to-orange-50">
       <Header />
-      
       <main className="relative mx-auto max-w-7xl px-4 pb-20 pt-10 sm:px-6 lg:px-8">
         {/* Hero - Full width with split design */}
         <motion.section
@@ -47,8 +47,8 @@ export default function AboutPage() {
                 <span className="text-[#da7756] block mt-2">together</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                we're a student-led community at uci focused on hands-on learning,
-                ethical ai, and shipping real projects with claude.
+                we're a student-led community at uci focused on hands-on
+                learning, ethical ai, and shipping real projects with claude.
               </p>
               <div className="flex flex-wrap gap-3 pt-4">
                 <Link
@@ -82,16 +82,26 @@ export default function AboutPage() {
           <div className="rounded-3xl border-2 border-[#da7756]/20 bg-white p-8 shadow-xl">
             <div className="grid grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="text-5xl font-bold text-[#da7756] mb-2">200+</div>
-                <div className="text-sm font-medium text-gray-600">members & contributors</div>
+                <div className="text-5xl font-bold text-[#da7756] mb-2">
+                  200+
+                </div>
+                <div className="text-sm font-medium text-gray-600">
+                  members & contributors
+                </div>
               </div>
               <div className="text-center border-x-2 border-gray-200">
-                <div className="text-5xl font-bold text-[#da7756] mb-2">15+</div>
-                <div className="text-sm font-medium text-gray-600">workshops & build nights</div>
+                <div className="text-5xl font-bold text-[#da7756] mb-2">
+                  15+
+                </div>
+                <div className="text-sm font-medium text-gray-600">
+                  workshops & build nights
+                </div>
               </div>
               <div className="text-center">
                 <div className="text-5xl font-bold text-[#da7756] mb-2">1</div>
-                <div className="text-sm font-medium text-gray-600">hackathon (fall 2025)</div>
+                <div className="text-sm font-medium text-gray-600">
+                  hackathon (fall 2025)
+                </div>
               </div>
             </div>
           </div>
@@ -120,8 +130,9 @@ export default function AboutPage() {
                     innovation through learning
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    idea → prototype quickly. we share patterns for prompts, agents,
-                    tools, and product flows that actually work. build nights, demos, and starter kits.
+                    idea → prototype quickly. we share patterns for prompts,
+                    agents, tools, and product flows that actually work. build
+                    nights, demos, and starter kits.
                   </p>
                 </div>
               </div>
@@ -147,8 +158,8 @@ export default function AboutPage() {
                     community & mentorship
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    meet teammates, get unstuck, and learn from folks building the
-                    same kind of stuff you are. peer feedback + support.
+                    meet teammates, get unstuck, and learn from folks building
+                    the same kind of stuff you are. peer feedback + support.
                   </p>
                 </div>
               </div>
@@ -172,8 +183,9 @@ export default function AboutPage() {
                     free resources & credits
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    we help with claude pro (limited), api credits, templates, and
-                    example repos so you can move fast. pro access when available.
+                    we help with claude pro (limited), api credits, templates,
+                    and example repos so you can move fast. pro access when
+                    available.
                   </p>
                 </div>
               </div>
@@ -229,7 +241,8 @@ export default function AboutPage() {
               meet our board
             </h2>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              get to know the dedicated student leaders behind claude builder club @ uci
+              get to know the dedicated student leaders behind claude builder
+              club @ uci
             </p>
             <Link
               href="/team"
@@ -252,7 +265,8 @@ export default function AboutPage() {
               ready to build with us?
             </h2>
             <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
-              join the club, get updates, and we'll see you at the next workshop.
+              join the club, get updates, and we'll see you at the next
+              workshop.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
@@ -275,6 +289,7 @@ export default function AboutPage() {
           </div>
         </motion.section>
       </main>
+      <Footer />;
     </div>
   );
 }

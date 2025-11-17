@@ -32,7 +32,7 @@ export default function EventsPage() {
               building <span className="text-[#da7756]">together</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              workshops, kickoffs, and hands-on sessions where we learn, build,
+              Workshops, kickoffs, and hands-on sessions where we learn, build,
               and ship with claude
             </p>
           </div>
